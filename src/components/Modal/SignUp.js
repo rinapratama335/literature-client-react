@@ -47,9 +47,7 @@ function SignUp({ show, onHide }) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <p>
-            Already have an account ? Klik <a>Here</a>
-          </p>
+          <p>Already have an account ? Klik Here</p>
         </Modal.Footer>
       </Modal>
     </>
