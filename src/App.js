@@ -10,6 +10,9 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 import HomePage from "./pages/homePage/HomePage";
 import AdminPage from "./pages/adminPage/AdminPage";
+import ProfilePage from "./pages/profilePage/ProfilePage";
+import MyCollection from "./pages/mycollection/MyCollection";
+import AddLiterature from "./pages/addliterature/AddLiterature";
 
 // Jika di localstorage ada token  maka eksesusi fungsi setAuthToken untuk menaruh token di localstorage
 if (localStorage.token) seAuthToken(localStorage.token);
@@ -43,6 +46,13 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <PrivateRoute exact path="/home" component={HomePage} />
           <PrivateRoute exact path="/admin" component={AdminPage} />
+          <PrivateRoute exact path="/profile" component={ProfilePage} />
+          <PrivateRoute exact path="/my-collection" component={MyCollection} />
+          <PrivateRoute
+            exact
+            path="/add-literature"
+            component={AddLiterature}
+          />
         </Switch>
       </Router>
     </div>
