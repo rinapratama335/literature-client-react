@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Container, Row, Col, Dropdown } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { BlockLoading } from "react-loadingg";
 import { API } from "../../apiConfig/api";
@@ -63,12 +63,32 @@ function ListLiteraturePage() {
                   listingLiteratures.map((item) => (
                     <Col md={3}>
                       <div key={item.id}>
-                        <img
-                          src={`${prefix_url}${item.cover}`}
-                          alt="cover"
-                          style={{ height: 270, width: 200 }}
-                        />
-                        <h1>{item.title}</h1>
+                        <Link to={`/literature/${item.id}`}>
+                          <img
+                            src={`${prefix_url}${item.cover}`}
+                            alt="cover"
+                            style={{ height: 270, width: 200 }}
+                          />
+                          <h1
+                            style={{
+                              color: "#fff",
+                              fontSize: 24,
+                              marginTop: 18,
+                            }}
+                          >
+                            {item.title}
+                          </h1>
+                        </Link>
+                      </div>
+                      <div>
+                        <Row>
+                          <Col sm={12}>
+                            <p>{item.user.fullName}</p>
+                            <p style={{ float: "right" }}>
+                              {item.publication_date}
+                            </p>
+                          </Col>
+                        </Row>
                       </div>
                     </Col>
                   ))
