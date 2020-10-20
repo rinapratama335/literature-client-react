@@ -1,15 +1,8 @@
 import React from "react";
-import {
-  Form,
-  FormControl,
-  Button,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
-import { FaSearch } from "react-icons/fa";
+import { Row, Col } from "react-bootstrap";
 import { Logo } from "../../assets/images";
 import NavbarMenu from "../../components/Navbar/NavbarMenu";
+import SearchForm from "../../components/SearchForm/SearchForm";
 import "./HomePage.css";
 
 function HomePage() {
@@ -24,30 +17,7 @@ function HomePage() {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col md={12}>
-            <div>
-              <Form inline>
-                <FormControl
-                  type="text"
-                  placeholder="Search"
-                  className="mr-sm-2 "
-                />
-                <Button
-                  className="button-search"
-                  style={{
-                    backgroundColor: "#AF2E1C",
-                    border: "none",
-                    paddingTop: 8,
-                    paddingBottom: 8,
-                  }}
-                >
-                  <FaSearch />
-                </Button>
-              </Form>
-            </div>
-          </Col>
-        </Row>
+        <SearchForm />
       </div>
     </div>
   );
