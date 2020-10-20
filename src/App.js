@@ -13,6 +13,7 @@ import AdminPage from "./pages/adminPage/AdminPage";
 import ProfilePage from "./pages/profilePage/ProfilePage";
 import MyCollection from "./pages/mycollection/MyCollection";
 import AddLiterature from "./pages/addliterature/AddLiterature";
+import ListLiteraturePage from "./pages/ListLiteraturePage/ListLiteraturePage";
 
 // Jika di localstorage ada token  maka eksesusi fungsi setAuthToken untuk menaruh token di localstorage
 if (localStorage.token) seAuthToken(localStorage.token);
@@ -48,6 +49,11 @@ function App() {
           <PrivateRoute exact path="/admin" component={AdminPage} />
           <PrivateRoute exact path="/profile" component={ProfilePage} />
           <PrivateRoute exact path="/my-collection" component={MyCollection} />
+          <PrivateRoute
+            exact
+            path="/literature"
+            component={ListLiteraturePage}
+          />
           <PrivateRoute
             exact
             path="/add-literature"
